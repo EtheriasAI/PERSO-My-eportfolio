@@ -63,7 +63,8 @@ article{
 	z-index:-1;
 	animation-name: article;
 	animation-duration: 2s;
-	margin-bottom:100px;
+	margin-bottom:50px;
+	margin-top:50px;
 }
 
 table
