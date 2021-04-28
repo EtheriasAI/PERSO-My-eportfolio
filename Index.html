@@ -50,26 +50,8 @@
 	<article class='keyE'>
 		<h1>Skills</h1>
 		<p>First, during my first 2 years of university studies, I've learnt various programming language</p>
-		<table>
-		<tr style="background-color:#858585;">
-						<th colspan="3">Programming language</th>
-					</tr>
-					<tr style="background-color:#FFFFFF;">
-							<td>Java</td>
-							<td>C/C++</td>
-							<td>Python</td>
-					</tr>					
-					<tr style="background-color:#FFFFFF">
-							<td>Javascript</td>
-							<td>CSS</td>
-							<td>PHP</td>
-					</tr>					
-					<tr style="background-color:#FFFFFF;">
-							<td>HTML</td>
-							<td>SQL</td>
-							<td>VBA</td>
-					</tr>
-		</table>
+		
+		<div id="container-circle"></div>
 		
 		<p>I use software Eclipse, Visual studio (and vs code), Access, notepad++, and I master the office pack.</p>
 		
@@ -91,6 +73,18 @@
 	</footer>
 	
 	<script>
+		addCircle(12,17,0,0,200,"JavaScript",1);
+		addCircle(31,1.5,200,60,190,"C/C++",2);
+		addCircle(24,2,255,60,60,"C++",3);
+		addCircle(35,9,200,100,100,"C#",4);
+		addCircle(31,17,200,60,190,"Python",5);
+		addCircle(10,10,255,60,60,"HTML",6);
+		addCircle(0,10,88,174,186,"CSS",7);
+		addCircle(13,2,0,0,150,"PHP",8);
+		addCircle(18,10,200,60,190,"SQL",9);
+		addCircle(24,18,0,255,0,"VBA",10);
+		addCircle(27,10,88,174,186,"Java",11);
+
 		window.onscroll = function() {myFunction()};
 
 		var header = document.getElementById("myHeader");
@@ -104,18 +98,28 @@
 		  }
 		}
 		window.addEventListener("keydown", function (event) {
-	if (event.keyCode==32) {
-	document.body.style.backgroundColor='#FFFFFF';
-	
+		if (event.keyCode==13) {
+		document.body.style.backgroundColor='#FFFFFF';
+		document.getElementById("myHeader").style.backgroundColor='#FF3636';
+		var elt= document.getElementsByClassName('keyE');
+		for (var i = 0, length = elt.length; i < length; i++) {
+		elt[i].style.backgroundColor = '#FFd8d8';
+		}
+		let test = document.querySelectorAll("#myFooter a");
+		test.forEach((element)=>(element.style.color="#FF0000"));
+		} }, true);
 
-	document.getElementById("myHeader").style.backgroundColor='#FF3636';
-	var elt= document.getElementsByClassName('keyE');
-	for (var i = 0, length = elt.length; i < length; i++) {
-	elt[i].style.backgroundColor = '#FFd8d8';
-	}
-	
-	} 
-}, true);
+		function addCircle(x,y,r,g,b,name,id){
+			var circleDiv = document.getElementById("container-circle");
+			var sheet = window.document.styleSheets[0];
+			let texte='<div id="circle'+id+'" class="circle">';
+			texte += '<p class="circle-text">'+name+'</p></div>'
+			circleDiv.innerHTML +=texte;
+			document.querySelector("#circle"+id).style.backgroundColor= 'rgb('+r+','+g+','+b+',0.25)';
+			document.querySelector("#circle"+id).style.marginLeft= x+"%";
+			document.querySelector("#circle"+id).style.marginTop= y+"%";
+		}
+
 	</script>
 
 </body>
