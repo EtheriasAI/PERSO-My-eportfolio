@@ -50,7 +50,7 @@
 	<article class='keyE'>
 		<h1>Skills</h1>
 		<p>First, during my first 2 years of university studies, I've learnt various programming language</p>
-		
+
 		<div id="container-circle"></div>
 		
 		<p>I use software Eclipse, Visual studio (and vs code), Access, notepad++, and I master the office pack.</p>
@@ -63,7 +63,7 @@
 		<p>I'm a fond of pop-culture, such as video games, anime/manga, discovering new culture.</p>
 		<p>I love learning languages like english, japanese.</p>
 		<p>I also love to program personal programs, website, video games.</p>
-		<h1>You should press enter</h1>
+		<h1>You should press spacebar</h1>
 		
 	</article>
 	
@@ -89,6 +89,7 @@
 
 		var header = document.getElementById("myHeader");
 		var sticky = header.offsetTop;
+		var keyEvent=false;
 
 		function myFunction() {
 		  if (window.pageYOffset > sticky) {
@@ -99,14 +100,29 @@
 		}
 		window.addEventListener("keydown", function (event) {
 		if (event.keyCode==13) {
-		document.body.style.backgroundColor='#FFFFFF';
-		document.getElementById("myHeader").style.backgroundColor='#FF3636';
-		var elt= document.getElementsByClassName('keyE');
-		for (var i = 0, length = elt.length; i < length; i++) {
-		elt[i].style.backgroundColor = '#FFd8d8';
-		}
-		let test = document.querySelectorAll("#myFooter a");
-		test.forEach((element)=>(element.style.color="#FF0000"));
+		
+			if(keyEvent==false){
+				document.body.style.backgroundColor='#FFFFFF';
+				document.getElementById("myHeader").style.backgroundColor='#FF3636';
+				var elt= document.getElementsByClassName('keyE');
+				for (var i = 0, length = elt.length; i < length; i++) {
+				elt[i].style.backgroundColor = '#FFd8d8';
+				}
+				let test = document.querySelectorAll("#myFooter a");
+				test.forEach((element)=>(element.style.color="#FF0000"));
+				keyEvent=true;
+			}else if(keyEvent==true){
+				document.body.style.backgroundColor='#00FFFF';
+				document.getElementById("myHeader").style.backgroundColor='#00bbbb';
+				var elt= document.getElementsByClassName('keyE');
+				for (var i = 0, length = elt.length; i < length; i++) {
+				elt[i].style.backgroundColor = '#FFFFFF';
+				}
+				let test = document.querySelectorAll("#myFooter a");
+				test.forEach((element)=>(element.style.color="#FFFFFF"));
+				keyEvent=false;
+			}
+			
 		} }, true);
 
 		function addCircle(x,y,r,g,b,name,id){
