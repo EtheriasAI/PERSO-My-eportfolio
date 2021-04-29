@@ -104,6 +104,7 @@ footer a{color:#FFFFFF;}
 	article{background-color:#00FFFF;}
 	li{display:block;}
 	footer a{color:#00FFFF;width:auto;}
+	.circle p{font-size:50%;}
 	#topb{
 	background-image:URL('images/bitmoji.png');
 	background-size: 100% 100%;
