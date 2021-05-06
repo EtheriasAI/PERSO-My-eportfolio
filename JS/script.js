@@ -12,6 +12,19 @@ addCircle(27,10,88,174,186,"Java",11);
 
 window.onscroll = function() {myFunction()};
 
+let allDiv = $('div').add('article').add('header').add('footer')
+allDiv.addClass('hide')
+
+let loader = $('#load')
+loader.removeClass('hide')
+
+setTimeout(()=>{
+
+allDiv.removeClass('hide')
+allDiv.addClass('show')
+loader.removeClass('loader show')
+}, 2000); 
+
 var header = document.getElementById("myHeader");
 var sticky = header.offsetTop;
 var keyEvent=false;
@@ -60,18 +73,3 @@ function addCircle(x,y,r,g,b,name,id){
     document.querySelector("#circle"+id).style.marginLeft= x+"%";
     document.querySelector("#circle"+id).style.marginTop= y+"%";
 }
-
-
-let allDiv = $('div').add('article').add('header').add('footer')
-allDiv.addClass('hide')
-
-let test = document.getElementById("load")
-test.classList.remove('hide')
-test.classList.remove('show')
-
-setTimeout(()=>{
-test.classList.remove('loader')
-allDiv.removeClass('hide')
-allDiv.addClass('show')
-
-}, 2000); 
