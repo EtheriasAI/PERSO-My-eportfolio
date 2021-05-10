@@ -23,7 +23,10 @@ setTimeout(()=>{
 allDiv.removeClass('hide')
 allDiv.addClass('show')
 loader.removeClass('loader show')
-}, 2000); 
+
+$('article').css('animation-name', 'article');
+$('article').css('animation-duration', '1s');
+}, 1000); 
 
 var header = document.getElementById("myHeader");
 var sticky = header.offsetTop;
