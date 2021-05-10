@@ -61,8 +61,6 @@ article{
 	width:auto;
 	position:relative;
 	z-index:-1;
-	animation-name: article;
-	animation-duration: 3s;
 	margin-bottom:50px;
 	margin-top:100px;
 }
