@@ -108,6 +108,11 @@ td, th,tr
 {
 	padding: 10px 100px 10px 100px;
 	width: 50%;
+	background-color: rgba(0,0,0,0) !important;
+}
+
+.deroulantcontent{
+	display:none;
 }
 
 footer{
@@ -120,7 +125,7 @@ footer a{color:#FFFFFF;}
 
 @keyframes article{
 	from {opacity:0%;}
-  to {opacity:100%;}
+	to {opacity:100%;}
 }
 
 @media only screen and (max-width: 1000px) { 
@@ -150,63 +155,88 @@ footer a{color:#FFFFFF;}
 	margin-top: 20%;
 	opacity: 100%;
 	z-index: 1000;
-  }
+}
   
-  @keyframes spin {
+@keyframes spin {
 	0% { transform: rotate(0deg); }
 	100% { transform: rotate(360deg); }
-  }
+}
 
-  .hide{
-	  opacity: 50%;
-	  z-index: -1000;
-  }
-  .show{
+.hide{
+	opacity: 50%;
+	z-index: -1000;
+}
+.show{
 	opacity : 100%;
-  }
+}
 
 .mySlides {display: none;
 	left: 0;
-right: 0;
-position: absolute;
+	right: 0;
+	position: absolute;
 }
+
 .slideshow-container {
-  padding-bottom: 65%;
-  width: 100%;
+	padding-top: 5%;
+	padding-bottom: 65%;
+	width: 100%;
 }
+
 .prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -22px;
-  color: white;
-  font-weight: bold;
-  font-size: 35px;
-  transition: 0.6s ease;
-  border-radius: 3px 3px 3px 3px;
-  user-select: none;
-  animation: fade .5s infinite;
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	width: auto;
+	padding: 16px;
+	margin-top: -22px;
+	color: white;
+	font-weight: bold;
+	font-size: 35px;
+	transition: 0.6s ease;
+	user-select: none;
 }
+
 .next {
-  right: 0;
+	right: 0;
+	animation: next .7s infinite;
+	border-radius: 20px 100px 100px 20px;
 }
+
 .prev {
-  left: 0;
+	left: 0;
+	animation: prev .7s infinite;
+	border-radius: 100px 20px 20px 100px;
 }
+
 .prev:hover, .next:hover {
-  background-color: rgba(0,255,255,0.8);
+
+	background-color: rgba(255,255,255,0.5);
+	color:#00ffff
 }
+
 .fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
+	animation-name: fade;
+	animation-duration: 1.5s;
 }
+
 @-webkit-keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
+	from {opacity: .4} 
+	to {opacity: 1}
 }
+
 @keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
+	from {opacity: .4} 
+	to {opacity: 1}
+}
+
+@keyframes prev{
+	0%{left:0;} 
+	50% {left:10px;}
+	100%{left:0;} 
+}
+
+@keyframes next{
+	0% {right:0;} 
+	50% {right:10px;}
+	100% {right:0;} 
 }
