@@ -40,39 +40,52 @@ function myFunction() {
     header.classList.remove("sticky");
   }
 }
+
+function deroulant(id,i) {
+  var x = document.getElementById(id);
+  console.log($('#'+i))
+  if (x.style.display === "block") {
+    x.style.display = "none";
+    $('#'+i).removeClass("fas fa-chevron-up")
+    $('#'+i).addClass("fas fa-chevron-down")
+  } else {
+    x.style.display = "block";
+    $('#'+i).removeClass("fas fa-chevron-down")
+    $('#'+i).addClass("fas fa-chevron-up");
+  }
+}
+
+
 window.addEventListener("keydown", function (event) {
-if (event.keyCode==13) {
+  if (event.keyCode==13) {
 
     if(keyEvent==false){
       $('body').css("background-color",'#FFFFFF');
-        $("#myHeader").css("background-color",'#FF3636');
-        $('.keyE').css("background-color",'#FFd8d8')
-        let couleurIcones = document.querySelectorAll("#myFooter a");
-        couleurIcones.forEach((element)=>(element.style.color="#FF0000"));
-        $('.line').css('border-right','solid thin #ff0000');
-        $('td').css('background-color','#FFd8d8')
-        keyEvent=true;
+      $("#myHeader").css("background-color",'#FF3636');
+      $('.keyE').css("background-color",'#FFd8d8')
+      let couleurIcones = document.querySelectorAll("#myFooter a");
+      couleurIcones.forEach((element)=>(element.style.color="#FF0000"));
+      $('.line').css('border-right','solid thin #ff0000');
+      keyEvent=true;
     }else if(keyEvent==true){
-        $('body').css("background-color",'#00FFFF');
-        $("#myHeader").css("background-color",'#00bbbb');
-        $('.keyE').css("background-color",'#FFFFFF')
-        let couleurIcones = document.querySelectorAll("#myFooter a");
-        couleurIcones.forEach((element)=>(element.style.color="#FFFFFF"));
-        $('.line').css('border-right','solid thin #00ffff');
-        $('td').css('background-color','#ffffff')
-        keyEvent=false;
-    }
-    
-} }, true);
+      $('body').css("background-color",'#00FFFF');
+      $("#myHeader").css("background-color",'#00bbbb');
+      $('.keyE').css("background-color",'#FFFFFF')
+      let couleurIcones = document.querySelectorAll("#myFooter a");
+      couleurIcones.forEach((element)=>(element.style.color="#FFFFFF"));
+      $('.line').css('border-right','solid thin #00ffff');
+      keyEvent=false;
+    }  
+  } }, true);
 
 function addCircle(x,y,r,g,b,name,id){
-    let circleDiv = $("#container-circle");
-    let texte='<div id="circle'+id+'" class="circle">';
-    texte += '<p class="circle-text">'+name+'</p></div>'
-    circleDiv.append(texte);
-    $("#circle"+id).css("background-color",'rgb('+r+','+g+','+b+',0.25)');
-    $("#circle"+id).css("marginLeft", x+"%");
-    $("#circle"+id).css("marginTop",y+"%");
+  let circleDiv = $("#container-circle");
+  let texte='<div id="circle'+id+'" class="circle">';
+  texte += '<p class="circle-text">'+name+'</p></div>'
+  circleDiv.append(texte);
+  $("#circle"+id).css("background-color",'rgb('+r+','+g+','+b+',0.25)');
+  $("#circle"+id).css("marginLeft", x+"%");
+  $("#circle"+id).css("marginTop",y+"%");
 }
 
 var slideIndex = 1;
