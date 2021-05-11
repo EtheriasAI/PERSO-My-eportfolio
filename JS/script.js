@@ -49,6 +49,8 @@ if (event.keyCode==13) {
         $('.keyE').css("background-color",'#FFd8d8')
         let couleurIcones = document.querySelectorAll("#myFooter a");
         couleurIcones.forEach((element)=>(element.style.color="#FF0000"));
+        $('.line').css('border-right','solid thin #ff0000');
+        $('td').css('background-color','#FFd8d8')
         keyEvent=true;
     }else if(keyEvent==true){
         $('body').css("background-color",'#00FFFF');
@@ -56,6 +58,8 @@ if (event.keyCode==13) {
         $('.keyE').css("background-color",'#FFFFFF')
         let couleurIcones = document.querySelectorAll("#myFooter a");
         couleurIcones.forEach((element)=>(element.style.color="#FFFFFF"));
+        $('.line').css('border-right','solid thin #00ffff');
+        $('td').css('background-color','#ffffff')
         keyEvent=false;
     }
     
