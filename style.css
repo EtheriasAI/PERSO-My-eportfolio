@@ -10,7 +10,14 @@ header{
 	font-size:200%;
 	text-align:center;
 	padding:5px;
-	z-index:10px;
+	z-index:10;
+}
+
+h2{
+	font-family: "Lucida Console", Monaco, monospace;
+	font-size: 28px;
+	color: #464646;
+	font-weight: 400;
 }
 
 #topb{
@@ -60,7 +67,6 @@ article{
 	padding:5%;
 	width:auto;
 	position:relative;
-	z-index:-1;
 	margin-bottom:50px;
 	margin-top:100px;
 }
@@ -84,6 +90,24 @@ article{
 	height: 10%;
 	border-radius: 50%; 
 	padding-bottom: 10%;
+}
+
+table
+{
+	margin:auto;
+	border-collapse: collapse;
+	width: inherit;
+	padding: 50px 0px 50px 0px;
+}
+
+.line{
+	border-right:thin solid #00ffff;
+}
+
+td, th,tr
+{
+	padding: 10px 100px 10px 100px;
+	width: 50%;
 }
 
 footer{
@@ -115,8 +139,8 @@ footer a{color:#FFFFFF;}
 }
 
 .loader {
-	border: 16px solid #f3f3f3; /* Light grey */
-	border-top: 16px solid #3498db; /* Blue */
+	border: 16px solid #f3f3f3;
+	border-top: 16px solid #00ffff;
 	border-radius: 50%;
 	width: 120px;
 	height: 120px;
@@ -135,7 +159,53 @@ footer a{color:#FFFFFF;}
 
   .hide{
 	  opacity: 50%;
+	  z-index: -1000;
   }
   .show{
 	opacity : 100%;
   }
+
+.mySlides {display: none;
+	left: 0;
+right: 0;
+position: absolute;
+}
+.slideshow-container {
+  padding-bottom: 65%;
+  width: 100%;
+}
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 3px 3px 3px 3px;
+  user-select: none;
+}
+.next {
+  right: 0;
+}
+.prev {
+  left: 0;
+}
+.prev:hover, .next:hover {
+  background-color: rgba(0,255,255,0.8);
+}
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
