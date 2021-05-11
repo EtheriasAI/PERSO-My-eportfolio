@@ -26,6 +26,7 @@ loader.removeClass('loader show')
 
 $('article').css('animation-name', 'article');
 $('article').css('animation-duration', '1s');
+
 }, 1000); 
 
 var header = document.getElementById("myHeader");
@@ -43,36 +44,51 @@ window.addEventListener("keydown", function (event) {
 if (event.keyCode==13) {
 
     if(keyEvent==false){
-        document.body.style.backgroundColor='#FFFFFF';
-        document.getElementById("myHeader").style.backgroundColor='#FF3636';
-        var elt= document.getElementsByClassName('keyE');
-        for (var i = 0, length = elt.length; i < length; i++) {
-        elt[i].style.backgroundColor = '#FFd8d8';
-        }
-        let test = document.querySelectorAll("#myFooter a");
-        test.forEach((element)=>(element.style.color="#FF0000"));
+      $('body').css("background-color",'#FFFFFF');
+        $("#myHeader").css("background-color",'#FF3636');
+        $('.keyE').css("background-color",'#FFd8d8')
+        let couleurIcones = document.querySelectorAll("#myFooter a");
+        couleurIcones.forEach((element)=>(element.style.color="#FF0000"));
         keyEvent=true;
     }else if(keyEvent==true){
-        document.body.style.backgroundColor='#00FFFF';
-        document.getElementById("myHeader").style.backgroundColor='#00bbbb';
-        var elt= document.getElementsByClassName('keyE');
-        for (var i = 0, length = elt.length; i < length; i++) {
-        elt[i].style.backgroundColor = '#FFFFFF';
-        }
-        let test = document.querySelectorAll("#myFooter a");
-        test.forEach((element)=>(element.style.color="#FFFFFF"));
+        $('body').css("background-color",'#00FFFF');
+        $("#myHeader").css("background-color",'#00bbbb');
+        $('.keyE').css("background-color",'#FFFFFF')
+        let couleurIcones = document.querySelectorAll("#myFooter a");
+        couleurIcones.forEach((element)=>(element.style.color="#FFFFFF"));
         keyEvent=false;
     }
     
 } }, true);
 
 function addCircle(x,y,r,g,b,name,id){
-    var circleDiv = document.getElementById("container-circle");
-    var sheet = window.document.styleSheets[0];
+    let circleDiv = $("#container-circle");
     let texte='<div id="circle'+id+'" class="circle">';
     texte += '<p class="circle-text">'+name+'</p></div>'
-    circleDiv.innerHTML +=texte;
-    document.querySelector("#circle"+id).style.backgroundColor= 'rgb('+r+','+g+','+b+',0.25)';
-    document.querySelector("#circle"+id).style.marginLeft= x+"%";
-    document.querySelector("#circle"+id).style.marginTop= y+"%";
+    circleDiv.append(texte);
+    $("#circle"+id).css("background-color",'rgb('+r+','+g+','+b+',0.25)');
+    $("#circle"+id).css("marginLeft", x+"%");
+    $("#circle"+id).css("marginTop",y+"%");
 }
+
+var slideIndex = 1;
+		showSlides(slideIndex);
+		
+		function plusSlides(n) {
+		  showSlides(slideIndex += n);
+		}
+		
+		function currentSlide(n) {
+		  showSlides(slideIndex = n);
+		}
+		
+		function showSlides(n) {
+		  var i;
+		  var slides = document.getElementsByClassName("mySlides");
+		  if (n > slides.length) {slideIndex = 1}    
+		  if (n < 1) {slideIndex = slides.length}
+		  for (i = 0; i < slides.length; i++) {
+			  slides[i].style.display = "none";  
+		  }
+		  slides[slideIndex-1].style.display = "block";  
+		}
