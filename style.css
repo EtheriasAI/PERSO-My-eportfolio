@@ -240,3 +240,34 @@ footer a{color:#FFFFFF;}
 	50% {right:10px;}
 	100% {right:0;} 
 }
+
+.exp{
+	width:inherit;
+	margin: 5%;
+	margin-right: 15%;
+}
+
+.expTitre{
+	display:flex;
+	position:relative;
+}
+
+.expBtn{
+	border:solid 5px #aaa;
+	border-radius: 5px 5px 5px 5px;
+	position: absolute;
+	right: 0;
+	width: 75px;
+	text-align: center ;
+}
+
+.expSpan{
+	cursor: pointer;
+}
+
+.expSpan{
+	color: #aaa;
+	font-size: 300%;
+	width: inherit;
+	height: inherit;
+}
