@@ -1,5 +1,5 @@
 addCircle(12,17,0,0,200,"JavaScript",1);
-addCircle(31,1.5,200,60,190,"C/C++",2);
+addCircle(31,1.5,200,60,190,"C",2);
 addCircle(24,2,255,60,60,"C++",3);
 addCircle(35,9,200,100,100,"C#",4);
 addCircle(31,17,200,60,190,"Python",5);
