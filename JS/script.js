@@ -9,6 +9,8 @@ addCircle(13,2,0,0,150,"PHP",8);
 addCircle(18,10,200,60,190,"SQL",9);
 addCircle(24,18,0,255,0,"VBA",10);
 addCircle(27,10,88,174,186,"Java",11);
+addCircle(40,15,0,0,150,"Kotlin",12);
+addCircle(39,2,0,0,150,"Go",13);
 
 window.onscroll = function() {myFunction()};
 

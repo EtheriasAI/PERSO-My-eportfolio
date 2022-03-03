@@ -3,6 +3,7 @@ body{
 	margin:0;
     padding:0;
 	font-family:system-ui;
+	overflow-x: none;
 }
 
 header{
@@ -129,10 +130,14 @@ footer a{color:#FFFFFF;}
 	to {opacity:100%;}
 }
 
+@media only screen and (min-width:1001px) {
+	#mobile{display:none;}
+	.computer{display:block;}
+}
+
 @media only screen and (max-width: 1000px) { 
 	body{background-color:#FFFFFF;}
 	article{background-color:#00FFFF;}
-	li{display:block;}
 	footer a{color:#00FFFF;width:auto;}
 	.circle p{font-size:50%;}
 	#topb{
@@ -142,6 +147,11 @@ footer a{color:#FFFFFF;}
 	height: 500px;
 	margin:auto;
 	width:400px;}
+	.expSpan{
+		color:#ffffff !important;
+	}
+	#mobile{display:block ;}
+	.computer{display:none;}
 }
 
 .loader {
@@ -254,8 +264,6 @@ footer a{color:#FFFFFF;}
 }
 
 .expBtn{
-	border:solid 5px #aaa;
-	border-radius: 5px 5px 5px 5px;
 	position: absolute;
 	right: 0;
 	width: 75px;
